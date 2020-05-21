@@ -2,16 +2,16 @@ import React from 'react';
 import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
-    PlusOutlined,
     BellOutlined,
     UserOutlined
 } from '@ant-design/icons';
 
 import { Layout, Input, Button, Badge, Avatar } from 'antd';
+import BookingModal from '../../Common/BookingModal';
 const { Header } = Layout;
 const { Search } = Input;
-const AppHeader = props => {
 
+const AppHeader = props => {
     const { collapsed, toggle } = props;
 
     return (
@@ -20,7 +20,6 @@ const AppHeader = props => {
                 className: 'trigger',
                 onClick: toggle,
             })}
-
             <Search
                 placeholder="Search"
                 onSearch={value => console.log(value)}
@@ -31,9 +30,7 @@ const AppHeader = props => {
             <Badge dot className=" header-btn float-right" >
                 <Button shape="circle" icon={<BellOutlined />} size="default" />
             </Badge>
-            <Button type="primary" className="header-btn float-right" icon={<PlusOutlined />}>
-                New Booking
-    </Button>
+            <BookingModal />
         </Header>
     );
 };
