@@ -17,10 +17,7 @@ ReactDOM.render(
     fallback={
       <div className="loader-container">
         <Spin
-          indicator={
-            <LoadingOutlined style={{ fontSize: 24, color: "black", marginTop: '2rem' }} spin />
-          }
-        />
+          style={{ fontSize: 24, color: "black", marginTop: '2rem' }}/>
         <div>Loading ...</div>
       </div>
     }

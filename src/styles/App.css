@@ -1,3 +1,6 @@
+@import "../../node_modules/@fullcalendar/core/main.css";
+@import "../../node_modules/@fullcalendar/daygrid/main.css";
+
 body {
   height: 100vh;
 }
@@ -32,10 +35,20 @@ body {
   padding: 0;
 }
 
-.float-right{
+.float-right {
   float: right;
+}
+
+.float-left {
+  float: left;
+  margin: 10px 15px 0 0;
 }
 
 .header-btn {
   margin: 15px 15px 0 0;
+}
+
+.booking-input {
+  display: flex;
+  flex-flow: row wrap;
 }

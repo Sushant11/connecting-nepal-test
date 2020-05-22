@@ -11,16 +11,15 @@ const { Content } = Layout;
 
 const AppLayout = props => {
   const [collapsed, setCollapsed] = useState('true')
-
   const toggle = () => {
     setCollapsed(!collapsed)
   }
 
   return (
     <Layout>
-      <AppSidenav collapsed={collapsed} />
+      <AppSidenav collapsed={collapsed} setCollapsed={setCollapsed}/>
       <Layout className="site-layout">
-        <AppHeader collapsed={collapsed} toggle={toggle} />
+        <AppHeader collapsed={collapsed} toggle={toggle}  history={props.children.props.history} />
         <Content
           className="site-layout-background"
           style={{

@@ -26,11 +26,11 @@ const AppHeader = props => {
                 style={{ width: 200 }}
             />
 
-            <Avatar className=" header-btn float-right" type="primary" icon={<UserOutlined />} />
-            <Badge dot className=" header-btn float-right" >
+            <Avatar className="header-btn float-right" type="primary" icon={<UserOutlined />} />
+            <Badge dot className="header-btn float-right" >
                 <Button shape="circle" icon={<BellOutlined />} size="default" />
             </Badge>
-            <BookingModal />
+            {props.history.location.pathname === '/booking' ? '' : <BookingModal />}
         </Header>
     );
 };
