@@ -20,11 +20,10 @@ import { Menu } from 'antd';
 const MenuItem = () => {
 
     let history = useHistory();
-    console.log('history :>> ', history);
 
     function handleRoute(e) {
         switch (e.key) {
-            case '/dashboard':
+            case '/':
                 history.push('/')
                 break;
 
@@ -71,34 +70,34 @@ const MenuItem = () => {
     }
     return (
         <Menu theme="dark" mode="inline" defaultSelectedKeys={[history.location.pathname]}>
-            <Menu.Item key="/dashboard" icon={<DashboardOutlined />} onClick={handleRoute}>
+            <Menu.Item key="/" icon={<DashboardOutlined />} onClick={handleRoute}>
                 Dashboard
             </Menu.Item>
-            <Menu.Item key="/booking" icon={<BookOutlined  />} onClick={handleRoute}>
+            <Menu.Item key="/booking" icon={<BookOutlined />} onClick={handleRoute}>
                 Booking
             </Menu.Item>
-            <Menu.Item key="/room" icon={<OneToOneOutlined  />} onClick={handleRoute}>
+            <Menu.Item key="/room" icon={<OneToOneOutlined />} onClick={handleRoute}>
                 Room
             </Menu.Item>
-            <Menu.Item key="/food" icon={<PieChartOutlined  />} onClick={handleRoute}>
+            <Menu.Item key="/food" icon={<PieChartOutlined />} onClick={handleRoute}>
                 Food
             </Menu.Item>
-            <Menu.Item key="/staff" icon={<TeamOutlined  />} onClick={handleRoute}>
+            <Menu.Item key="/staff" icon={<TeamOutlined />} onClick={handleRoute}>
                 Staff
             </Menu.Item>
-            <Menu.Item key="/rate" icon={<PercentageOutlined  />} onClick={handleRoute}>
+            <Menu.Item key="/rate" icon={<PercentageOutlined />} onClick={handleRoute}>
                 Rate
             </Menu.Item>
-            <Menu.Item key="/price" icon={<DollarCircleOutlined  />} onClick={handleRoute}>
+            <Menu.Item key="/price" icon={<DollarCircleOutlined />} onClick={handleRoute}>
                 Price
             </Menu.Item>
-            <Menu.Item key="/property" icon={<HomeOutlined  />} onClick={handleRoute}>
+            <Menu.Item key="/property" icon={<HomeOutlined />} onClick={handleRoute}>
                 Property
             </Menu.Item>
-            <Menu.Item key="/facility" icon={<StarOutlined   />} onClick={handleRoute}>
+            <Menu.Item key="/facility" icon={<StarOutlined />} onClick={handleRoute}>
                 Facility
             </Menu.Item>
-            <Menu.Item key="/calendar" icon={<CalendarOutlined  />} onClick={handleRoute}>
+            <Menu.Item key="/calendar" icon={<CalendarOutlined />} onClick={handleRoute}>
                 Calendar
             </Menu.Item>
         </Menu>

@@ -16,23 +16,19 @@ const Booking = () => {
     const handleChange = (value) => {
         let data = Bookings.filter(i => i.roomNo === value)
         setBooking(data)
-        console.log('moment(data.date) :>> ', booking);
-    }
-
-    const onPanelChange = (value, mode) => {
-        console.log(value.format('YYYY-MM-DD'), mode);
     }
 
     return (
         <div>
             <div className="booking-input">
-                <Select placeholder="Select a Room Number" showSearch
+                {Bookings === null ? '' : <Select placeholder="Select a Room Number" showSearch
                     optionFilterProp="children"
                     style={{ width: '12%' }}
                     onChange={handleChange}
                 >
                     {Rooms.map(i => <Option value={i.key} key={i.key}>{i.key}</Option>)}
-                </Select>
+                </Select>}
+
                 <BookingModal style={{ float: 'left', margin: '0px 0px 0 10px' }} />
             </div>
 

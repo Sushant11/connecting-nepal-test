@@ -64,3 +64,7 @@ body {
 .bookings-dashboard {
   color: #1890ff !important;
 }
+
+.ant-table-pagination.ant-pagination {
+  margin: 16px 24px;
+}

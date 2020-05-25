@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react';
-import { Modal, Form, Input, Select, DatePicker, Button } from 'antd';
-import moment from 'moment'
-
+import { Modal, Form, Input, Select, DatePicker, Button, message } from 'antd';
+import { useHistory } from 'react-router-dom'
 import Rooms from '../../Rooms'
 
 import {
@@ -17,6 +16,7 @@ const layout = {
 
 const BookingCreateForm = ({ visible, onCreate, onCancel }) => {
     const [form] = Form.useForm();
+
     return (
         <Modal
             visible={visible}
@@ -74,6 +74,7 @@ const BookingCreateForm = ({ visible, onCreate, onCancel }) => {
 
 const BookingModal = (props) => {
     const [visible, setVisible] = useState(false)
+    const history = useHistory();
 
     let bookings = JSON.parse(localStorage.getItem('Bookings')) || []
 
@@ -82,6 +83,8 @@ const BookingModal = (props) => {
         bookings.push(values)
         localStorage.setItem('Bookings', JSON.stringify(bookings))
         setVisible(false);
+        message.success('Booking added successfully.');
+        history.push("/");
     };
 
     return (
