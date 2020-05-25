@@ -52,3 +52,15 @@ body {
   display: flex;
   flex-flow: row wrap;
 }
+
+.ant-card-body {
+  padding: 0;
+}
+
+.card-dashboard {
+  box-shadow: 0px 5px 8px 0px #f9f9f9;
+}
+
+.bookings-dashboard {
+  color: #1890ff !important;
+}
